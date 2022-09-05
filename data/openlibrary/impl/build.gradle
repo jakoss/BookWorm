@@ -1,0 +1,14 @@
+plugins {
+    id 'project.android-library-conventions'
+    id 'project.android-networking-conventions'
+    id 'project.android-mapstruct-conventions'
+}
+
+android {
+    namespace 'pl.jsyty.bookworm.openlibrary.impl'
+}
+
+dependencies {
+    implementation project(':core:infrastructure')
+    implementation project(':data:openlibrary')
+}

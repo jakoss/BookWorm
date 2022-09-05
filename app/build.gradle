@@ -68,6 +68,9 @@ dependencies {
     implementation project(':features:dashboard')
     implementation project(':features:dashboard:impl')
 
+    implementation project(':data:openlibrary')
+    implementation project(':data:openlibrary:impl')
+
     kapt libs.dagger.compiler
 
     implementation libs.androidx.coordinatorlayour
