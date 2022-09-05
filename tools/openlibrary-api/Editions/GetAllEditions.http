@@ -1,0 +1,3 @@
+@workId=OL27448W
+
+GET https://openlibrary.org/works/{{workId}}/editions.json

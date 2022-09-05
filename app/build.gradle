@@ -14,7 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "API_URL", "\"https://api.open-meteo.com/v1\""
+        buildConfigField "String", "API_URL", "\"https://openlibrary.org\""
     }
 
     buildTypes {

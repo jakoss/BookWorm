@@ -17,5 +17,13 @@ import org.orbitmvi.orbit.viewmodel.container
  */
 abstract class BaseViewModel<STATE : Any, SIDE_EFFECT : Any>(initialState: STATE) :
     ContainerHost<STATE, SIDE_EFFECT>, ViewModel() {
-    override val container = container<STATE, SIDE_EFFECT>(initialState)
+    override val container = container<STATE, SIDE_EFFECT>(initialState) {
+        onCreate()
+    }
+
+    /**
+     * Override this to handle custom onCreate
+     */
+    open fun onCreate() {
+    }
 }
