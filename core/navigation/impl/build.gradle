@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'pl.jsyty.architecturetemplate.infrastructure.navigation.impl'
+    namespace 'pl.syty.bookworm.infrastructure.navigation.impl'
 }
 
 dependencies {

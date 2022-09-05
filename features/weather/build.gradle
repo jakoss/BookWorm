@@ -1,7 +1,0 @@
-plugins {
-    id 'project.android-feature-api-conventions'
-}
-
-android {
-    namespace 'pl.jsyty.architecturetemplate.feature.weather'
-}

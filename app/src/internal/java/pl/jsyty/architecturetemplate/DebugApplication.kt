@@ -1,4 +1,4 @@
-package pl.jsyty.architecturetemplate
+package pl.syty.bookworm
 
 import com.pluto.Pluto
 import com.pluto.plugins.exceptions.PlutoExceptionsPlugin
@@ -7,8 +7,8 @@ import com.pluto.plugins.logger.PlutoTimberTree
 import com.pluto.plugins.network.PlutoInterceptor
 import com.pluto.plugins.network.PlutoNetworkPlugin
 import okhttp3.OkHttpClient
-import pl.jsyty.architecturetemplate.core.networking.OkHttpBuilderStep
-import pl.jsyty.architecturetemplate.core.networking.OkHttpBuilderSteps
+import pl.syty.bookworm.core.networking.OkHttpBuilderStep
+import pl.syty.bookworm.core.networking.OkHttpBuilderSteps
 import timber.log.Timber
 
 @Suppress("unused")

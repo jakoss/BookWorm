@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'pl.jsyty.architecturetemplate.infrastructure'
+    namespace 'pl.syty.bookworm.infrastructure'
 }
 
 dependencies {

@@ -3,5 +3,5 @@ plugins {
 }
 
 android {
-    namespace 'pl.jsyty.architecturetemplate.feature.dashboard'
+    namespace 'pl.syty.bookworm.feature.dashboard'
 }

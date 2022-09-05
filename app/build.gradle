@@ -7,10 +7,10 @@ plugins {
 }
 
 android {
-    namespace 'pl.jsyty.architecturetemplate'
+    namespace 'pl.syty.bookworm'
 
     defaultConfig {
-        applicationId "pl.jsyty.architecturetemplate"
+        applicationId "pl.syty.bookworm"
         versionCode 1
         versionName "1.0"
 
@@ -67,12 +67,6 @@ dependencies {
 
     implementation project(':features:dashboard')
     implementation project(':features:dashboard:impl')
-    implementation project(':features:message:impl')
-    implementation project(':features:longaction:impl')
-    implementation project(':features:weather:impl')
-
-    implementation project(':data:weather')
-    implementation project(':data:weather:impl')
 
     kapt libs.dagger.compiler
 
