@@ -27,7 +27,6 @@ class DashboardFragment : BaseDirectableComposeFragment<DashboardDirection>() {
 
     @Composable
     private fun DashboardPanel() {
-
     }
 
     @Preview(showBackground = true)
