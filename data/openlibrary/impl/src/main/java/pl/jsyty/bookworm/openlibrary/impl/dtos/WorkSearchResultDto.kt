@@ -16,5 +16,5 @@ data class WorkSearchResultDto(
     @SerialName("author_name")
     val authorNames: List<String> = emptyList(),
     @SerialName("language")
-    val languages: List<String> = emptyList()
+    val languages: List<String> = emptyList(),
 )

@@ -9,7 +9,7 @@ import javax.inject.Inject
 @ContributesBinding(scope = AppScope::class)
 class OpenLibraryRepositoryImpl @Inject constructor(
     private val openLibrarySearchService: OpenLibrarySearchService,
-    private val openLibraryMapper: OpenLibraryMapper
+    private val openLibraryMapper: OpenLibraryMapper,
 ) : OpenLibraryRepository {
     override suspend fun searchForQuery(query: String): List<WorkSearchResult> {
         val result = openLibrarySearchService.searchForQuery(query)

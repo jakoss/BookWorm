@@ -32,17 +32,17 @@ class DashboardFragment : BaseDirectableComposeFragment<DashboardDirection>() {
     @Composable
     private fun DashboardPanel(
         state: DashboardViewModel.State,
-        onSearchType: (String) -> Unit = {}
+        onSearchType: (String) -> Unit = {},
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             TextField(value = state.searchQuery, onValueChange = onSearchType)
             Spacer(modifier = Modifier.height(4.dp))
             FullscreenAsyncHandler(state = state.results, retryAction = { /*TODO*/ }) {
-                if (it.isEmpty()){
+                if (it.isEmpty()) {
                     Text(text = "No search results")
-                }else{
+                } else {
                     LazyColumn(modifier = Modifier.fillMaxSize()) {
-                        items(it){ work ->
+                        items(it) { work ->
                             Text(text = work.title)
                         }
                     }

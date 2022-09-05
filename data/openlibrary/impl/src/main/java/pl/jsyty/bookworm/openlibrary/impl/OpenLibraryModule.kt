@@ -14,7 +14,7 @@ import javax.inject.Singleton
 object OpenLibraryModule {
     @Singleton
     @Provides
-    fun provideOpenLibrarySearchService(retrofitFactory: RetrofitFactory): OpenLibrarySearchService{
+    fun provideOpenLibrarySearchService(retrofitFactory: RetrofitFactory): OpenLibrarySearchService {
         return retrofitFactory.create("search.json")
     }
 

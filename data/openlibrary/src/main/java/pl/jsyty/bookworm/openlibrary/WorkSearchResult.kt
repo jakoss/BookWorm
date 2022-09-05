@@ -7,5 +7,5 @@ data class WorkSearchResult(
     val firstPublishYear: Int?,
     val coverId: Int?,
     val authorNames: List<String>,
-    val languages: List<String>
+    val languages: List<String>,
 )
