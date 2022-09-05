@@ -1,0 +1,15 @@
+plugins {
+    id 'project.android-feature-conventions'
+    id 'project.android-compose-conventions'
+}
+
+android {
+    namespace 'pl.jsyty.architecturetemplate.feature.dashboard.impl'
+}
+
+dependencies {
+    implementation project(':features:dashboard')
+    implementation project(':features:message')
+    implementation project(':features:longaction')
+    implementation project(':features:weather')
+}

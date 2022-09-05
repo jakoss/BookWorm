@@ -1,0 +1,39 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url = "https://jitpack.io"
+        }
+    }
+}
+rootProject.name = "Architecture Template"
+
+includeBuild 'build-logic'
+
+include ':app'
+include ':core:infrastructure'
+include ':core:ui'
+include ':features:dashboard'
+include ':features:dashboard:impl'
+include ':features:message'
+include ':features:message:impl'
+include ':features:longaction'
+include ':features:longaction:impl'
+include ':core:navigation'
+include ':core:navigation:impl'
+include ':core:navigation:processor'
+include ':features:weather'
+include ':features:weather:impl'
+include ':core:networking'
+include ':data:weather'
+include ':data:weather:impl'
+include ':libraries:mapstructspi'
