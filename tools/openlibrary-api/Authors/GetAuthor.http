@@ -1,3 +1,0 @@
-@authorId=OL26320A
-
-GET https://openlibrary.org/authors/{{authorId}}.json

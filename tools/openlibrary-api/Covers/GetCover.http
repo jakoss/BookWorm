@@ -1,5 +1,0 @@
-@id=9255566
-@key=id
-@size=M
-
-GET https://covers.openlibrary.org/b/{{key}}/{{id}}-{{size}}.jpg

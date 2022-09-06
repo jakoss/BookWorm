@@ -1,3 +1,0 @@
-@query=Lord of the rings
-
-GET http://openlibrary.org/search.json?q={{query}}
