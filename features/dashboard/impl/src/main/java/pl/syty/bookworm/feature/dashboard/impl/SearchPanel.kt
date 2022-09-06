@@ -6,16 +6,16 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Search
-import androidx.compose.material.icons.sharp.MenuBook
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import org.orbitmvi.orbit.compose.collectAsState
 import pl.syty.bookworm.infrastructure.async.Loading
+import pl.syty.bookworm.infrastructure.drawableR
 import pl.syty.bookworm.ui.async.FullscreenAsyncHandler
 import pl.syty.bookworm.ui.modifiers.tapToClearFocus
 import tangle.viewmodel.compose.tangleViewModel
@@ -25,7 +25,7 @@ import tangle.viewmodel.compose.tangleViewModel
 internal fun SearchPanel() {
     val viewModel = tangleViewModel<DashboardViewModel>()
     val state by viewModel.collectAsState()
-    val placeholderVector = rememberVectorPainter(image = Icons.Sharp.MenuBook)
+    val placeholderPainter = painterResource(id = drawableR.ic_book)
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -72,12 +72,12 @@ internal fun SearchPanel() {
                                         contentDescription = null,
                                         contentScale = ContentScale.Fit,
                                         modifier = Modifier.size(48.dp),
-                                        placeholder = placeholderVector,
-                                        error = placeholderVector
+                                        placeholder = placeholderPainter,
+                                        error = placeholderPainter
                                     )
                                 } else {
                                     Icon(
-                                        Icons.Sharp.MenuBook,
+                                        painter = placeholderPainter,
                                         contentDescription = null,
                                         modifier = Modifier.size(48.dp)
                                     )
