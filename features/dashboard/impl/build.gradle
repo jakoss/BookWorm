@@ -9,5 +9,5 @@ android {
 
 dependencies {
     implementation project(':features:dashboard')
-    implementation project(':data:openlibrary')
+    implementation project(':data:books-remote')
 }

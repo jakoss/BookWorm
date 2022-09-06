@@ -14,7 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "API_URL", "\"https://openlibrary.org\""
+        buildConfigField "String", "API_URL", "\"https://www.googleapis.com/books/v1\""
     }
 
     buildTypes {
@@ -67,9 +67,9 @@ dependencies {
 
     implementation project(':features:dashboard')
     implementation project(':features:dashboard:impl')
+    implementation project(':data:books-remote')
 
-    implementation project(':data:openlibrary')
-    implementation project(':data:openlibrary:impl')
+    implementation project(':data:books-remote:impl')
 
     kapt libs.dagger.compiler
 

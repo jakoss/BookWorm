@@ -3,5 +3,5 @@ plugins {
 }
 
 android {
-    namespace 'pl.jsyty.bookworm.openlibrary'
+    namespace 'pl.jsyty.bookworm.booksremote'
 }

@@ -5,19 +5,18 @@ import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.*
 import org.orbitmvi.orbit.syntax.simple.*
-import pl.jsyty.bookworm.openlibrary.*
+import pl.jsyty.bookworm.booksremote.*
 import pl.syty.bookworm.infrastructure.async.*
 import pl.syty.bookworm.infrastructure.viewmodel.BaseViewModel
 import pl.syty.bookworm.infrastructure.viewmodel.async
 import tangle.viewmodel.VMInject
 
 class DashboardViewModel @VMInject constructor(
-    private val openLibraryRepository: OpenLibraryRepository,
-    private val coverUrlResolver: OpenLibraryCoverUrlResolver,
+    private val booksRemoteRepository: BooksRemoteRepository,
 ) : BaseViewModel<DashboardViewModel.State, Unit>(State()) {
     data class State(
         val searchQuery: String = "",
-        val results: Async<ImmutableList<WorkSearchResultUiModel>> = Uninitialized,
+        val results: Async<ImmutableList<VolumeSearchUiModel>> = Uninitialized,
     )
 
     @OptIn(FlowPreview::class)
@@ -44,20 +43,21 @@ class DashboardViewModel @VMInject constructor(
             reduce {
                 state.copy(
                     results = Success(
-                        emptyList<WorkSearchResultUiModel>().toImmutableList()
+                        emptyList<VolumeSearchUiModel>().toImmutableList()
                     )
                 )
             }
             return
         }
         async {
-            openLibraryRepository.searchForQuery(searchQuery)
+            booksRemoteRepository.searchForQuery(searchQuery)
                 .map {
-                    WorkSearchResultUiModel(
-                        key = it.key,
+                    VolumeSearchUiModel(
+                        id = it.id,
                         title = it.title,
-                        coverUrl = coverUrlResolver.resolve(it, CoverSize.SMALL),
-                        authorName = it.authorNames.firstOrNull()
+                        subtitle = it.subTitle,
+                        thumbnailUrl = it.imageLinks.thumbnail,
+                        authorName = it.authors.firstOrNull()
                     )
                 }
                 .toImmutableList()

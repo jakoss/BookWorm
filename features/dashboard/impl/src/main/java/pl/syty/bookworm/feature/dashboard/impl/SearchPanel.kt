@@ -60,15 +60,16 @@ internal fun SearchPanel() {
                     modifier = Modifier
                         .fillMaxSize()
                 ) {
-                    items(asyncState, key = { item -> item.key }) { work ->
+                    items(asyncState, key = { item -> item.id }) { volume ->
                         ListItem(
                             modifier = Modifier.fillMaxWidth(),
-                            text = { Text(text = work.title) },
-                            secondaryText = work.authorName?.let { { Text(text = it) } },
+                            text = { Text(text = volume.title) },
+                            secondaryText = volume.subtitle?.let { { Text(text = it) } },
+                            overlineText = volume.authorName?.let { { Text(text = it) } },
                             icon = {
-                                if (work.coverUrl != null) {
+                                if (volume.thumbnailUrl != null) {
                                     AsyncImage(
-                                        model = work.coverUrl,
+                                        model = volume.thumbnailUrl,
                                         contentDescription = null,
                                         contentScale = ContentScale.Fit,
                                         modifier = Modifier.size(48.dp),

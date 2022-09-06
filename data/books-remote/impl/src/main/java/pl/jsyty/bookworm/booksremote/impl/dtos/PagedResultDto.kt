@@ -1,15 +1,11 @@
-package pl.jsyty.bookworm.openlibrary.impl.dtos
+package pl.jsyty.bookworm.booksremote.impl.dtos
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class PagedResultDto<T : Any>(
-    @SerialName("docs")
     val items: List<T>,
-    val start: Int,
-    @SerialName("numFound")
+    @SerialName("totalItems")
     val total: Int,
-    @SerialName("numFoundExact")
-    val totalExact: Boolean,
 )
