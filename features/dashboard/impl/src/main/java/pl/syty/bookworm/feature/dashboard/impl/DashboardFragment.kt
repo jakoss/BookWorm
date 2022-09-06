@@ -65,11 +65,11 @@ class DashboardFragment : BaseDirectableComposeFragment<DashboardDirection>() {
                     onSearchType = viewModel::updateSearchQuery,
                     onRetryAction = viewModel::rerunSearch
                 )
-            }) {
+            }
+        ) {
             Scaffold(
                 bottomBar = {
                     BottomAppBar(cutoutShape = CircleShape) {
-
                     }
                 },
                 floatingActionButton = {
@@ -80,7 +80,7 @@ class DashboardFragment : BaseDirectableComposeFragment<DashboardDirection>() {
                     }
                 },
                 floatingActionButtonPosition = FabPosition.Center,
-                isFloatingActionButtonDocked = true,
+                isFloatingActionButtonDocked = true
             ) {
                 Box(
                     modifier = Modifier
@@ -122,7 +122,8 @@ class DashboardFragment : BaseDirectableComposeFragment<DashboardDirection>() {
                         imageVector = Icons.Outlined.Search,
                         contentDescription = null
                     )
-                })
+                }
+            )
             Spacer(modifier = Modifier.height(4.dp))
             if (state.results is Loading) {
                 LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
@@ -131,7 +132,7 @@ class DashboardFragment : BaseDirectableComposeFragment<DashboardDirection>() {
                 state = state.results,
                 retryAction = onRetryAction,
                 loading = {},
-                uninitialized = {},
+                uninitialized = {}
             ) { asyncState ->
                 if (asyncState.isEmpty()) {
                     Text(text = "No search results")
