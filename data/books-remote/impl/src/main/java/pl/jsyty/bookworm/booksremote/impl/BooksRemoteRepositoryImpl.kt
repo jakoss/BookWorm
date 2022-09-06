@@ -27,7 +27,7 @@ class BooksRemoteRepositoryImpl @Inject constructor(
                     thumbnail = it.volumeInfo.imageLinks.thumbnail,
                     small = it.volumeInfo.imageLinks.small,
                     medium = it.volumeInfo.imageLinks.medium,
-                    large = it.volumeInfo.imageLinks.large,
+                    large = it.volumeInfo.imageLinks.large
                 )
             )
         }
