@@ -23,4 +23,6 @@ dependencies {
 
     implementation libs.bundles.orbitmvi
     implementation libs.material
+    implementation libs.kotlinx.collections.immutable
+    implementation libs.coil
 }

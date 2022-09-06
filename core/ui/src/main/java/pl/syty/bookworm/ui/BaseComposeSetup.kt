@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import pl.syty.bookworm.infrastructure.di.ComponentHolder
 import pl.syty.bookworm.infrastructure.navigation.*
-import pl.syty.bookworm.ui.theme.ArchitectureTemplateTheme
+import pl.syty.bookworm.ui.theme.BookWormTheme
 
 private val navigationComponent by lazy { ComponentHolder.component<NavigationComponent>() }
 
@@ -25,7 +25,7 @@ fun Fragment.baseComposeSetup(content: @Composable () -> Unit) =
                 LocalChildFragmentManager provides this@baseComposeSetup.childFragmentManager,
                 LocalParentFragmentManager provides this@baseComposeSetup.parentFragmentManager
             ) {
-                ArchitectureTemplateTheme {
+                BookWormTheme {
                     content()
                 }
             }
@@ -63,6 +63,9 @@ private val navigationControllerFake = object :
     }
 }
 
-val LocalNavigationController = compositionLocalOf<NavigationController> { navigationControllerFake }
-val LocalChildFragmentManager = compositionLocalOf<FragmentManager> { object : FragmentManager() {} }
-val LocalParentFragmentManager = compositionLocalOf<FragmentManager> { object : FragmentManager() {} }
+val LocalNavigationController =
+    compositionLocalOf<NavigationController> { navigationControllerFake }
+val LocalChildFragmentManager =
+    compositionLocalOf<FragmentManager> { object : FragmentManager() {} }
+val LocalParentFragmentManager =
+    compositionLocalOf<FragmentManager> { object : FragmentManager() {} }

@@ -1,9 +1,7 @@
 package pl.syty.bookworm
 
-import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.window.OnBackInvokedDispatcher
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.flowWithLifecycle
@@ -70,16 +68,8 @@ class MainNavigationFragment : Fragment(R.layout.fragment_main_navigation) {
             }
         }
 
-        if (Build.VERSION.SDK_INT >= 33) {
-            requireActivity().onBackInvokedDispatcher.registerOnBackInvokedCallback(
-                OnBackInvokedDispatcher.PRIORITY_DEFAULT
-            ) {
-                runBackAction()
-            }
-        } else {
-            requireActivity().onBackPressedDispatcher.addCallback(this) {
-                runBackAction()
-            }
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            runBackAction()
         }
     }
 
