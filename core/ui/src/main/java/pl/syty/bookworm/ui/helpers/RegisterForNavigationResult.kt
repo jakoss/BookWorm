@@ -16,20 +16,20 @@ import pl.syty.bookworm.ui.LocalChildFragmentManager
  * @param navigationResult Type of navigation result we're registering for
  * @param fragmentManager Fragment manager we want to use. Use [LocalChildFragmentManager] for dialogs (default) and [pl.syty.bookworm.ui.LocalParentFragmentManager] for results from sibling screens.
  * @param lifecycleOwner Lifecycle owner that will be used for listening. By default Fragments [LocalLifecycleOwner] is used.
- * @param callback Will be called with a parameter of type [T] when the result is passed to us.
+ * @param onValueReceive Will be called with a parameter of type [T] when the result is passed to us.
  */
 @Composable
 fun <T : Any> RegisterForNavigationResult(
     navigationResult: NavigationResult<T>,
+    onValueReceive: (T) -> Unit,
     fragmentManager: FragmentManager = LocalChildFragmentManager.current,
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
-    callback: (T) -> Unit,
 ) {
     LaunchedEffect(Unit) {
         fragmentManager.setFragmentResultListener(navigationResult.resultKey, lifecycleOwner) { _, bundle ->
             @Suppress("UNCHECKED_CAST", "DEPRECATION")
             val result = bundle.get(navigationResult.parameterKey) as T
-            callback(result)
+            onValueReceive(result)
         }
     }
 }

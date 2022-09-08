@@ -49,7 +49,7 @@ internal fun SearchPanel() {
         }
         FullscreenAsyncHandler(
             state = state.results,
-            retryAction = viewModel::rerunSearch,
+            onRetryAction = viewModel::rerunSearch,
             loading = {},
             uninitialized = {}
         ) { asyncState ->

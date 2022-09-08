@@ -63,6 +63,8 @@ detekt {
 dependencies {
     coreLibraryDesugaring libs.desugaring
 
+    detektPlugins libs.detekt.rules.compose
+
     implementation libs.coroutines.lib
 
     implementation libs.dagger.core
