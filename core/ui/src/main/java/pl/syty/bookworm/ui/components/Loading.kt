@@ -20,8 +20,8 @@ import androidx.compose.ui.graphics.Color
  */
 @Composable
 fun FullscreenLoader(
-    modifier: Modifier = Modifier,
     color: Color = MaterialTheme.colors.primary,
+    modifier: Modifier = Modifier,
     background: Color = MaterialTheme.colors.surface,
     alpha: Float = 0.6f,
 ) {

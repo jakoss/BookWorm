@@ -22,8 +22,8 @@ import pl.syty.bookworm.ui.components.FullscreenLoader
 @Composable
 fun <T> FullscreenAsyncHandler(
     state: Async<T>,
-    error: @Composable (Throwable) -> Unit = { FullscreenError(retryAction = onRetryAction) },
     onRetryAction: () -> Unit,
+    error: @Composable (Throwable) -> Unit = { FullscreenError(retryAction = onRetryAction) },
     loading: @Composable () -> Unit = { FullscreenLoader() },
     uninitialized: @Composable () -> Unit = { FullscreenLoader() },
     success: @Composable (T) -> Unit,

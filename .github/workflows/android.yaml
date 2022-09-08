@@ -80,3 +80,4 @@ jobs:
                 github_token: ${{ secrets.github_token }}
                 detekt_config: ./config/detekt/detekt.yml
                 detekt_plugins: ./config/detekt/plugins/detekt-rules-compose-1.2.1.jar
+                reviewdog_filter: file # always analyse whole file that was added/modified
