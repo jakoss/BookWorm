@@ -62,3 +62,19 @@ jobs:
                 with:
                     arguments: lintKotlin :app:assembleDebug :app:lintDebug --stacktrace # run tests here
                 if: steps.commit_formatted_code.outputs.pushed == 'false'
+
+
+    actionlint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: reviewdog/action-actionlint@v1
+
+    detekt:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Detekt
+              uses: alaegin/Detekt-Action@v1.21.0-RC2
+              with:
+                github_token: ${{ secrets.github_token }}
