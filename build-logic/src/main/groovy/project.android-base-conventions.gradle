@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.plugin.parcelize'
     id 'com.squareup.anvil'
     id 'org.jmailen.kotlinter'
+    id 'io.gitlab.arturbosch.detekt'
     id 'org.gradle.android.cache-fix'
 }
 
@@ -49,6 +50,14 @@ android {
 
 anvil {
     generateDaggerFactories = true
+}
+
+detekt {
+    parallel = true
+
+    config = files(rootDir.absolutePath + "/config/detekt/detekt.yml")
+
+    ignoredBuildTypes = ["release", "internal"]
 }
 
 dependencies {

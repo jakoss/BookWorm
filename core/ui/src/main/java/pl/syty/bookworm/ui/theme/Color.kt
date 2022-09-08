@@ -1,3 +1,4 @@
+@file:Suppress("MagicNumber")
 package pl.syty.bookworm.ui.theme
 
 import androidx.compose.ui.graphics.Color
