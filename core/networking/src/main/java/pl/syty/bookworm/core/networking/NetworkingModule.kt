@@ -23,6 +23,7 @@ object NetworkingModule {
     /**
      * Provide basic [OkHttpClient] setup complete with cache, timeout and all interceptors
      */
+    @Suppress("MagicNumber")
     @Singleton
     @Provides
     fun provideOkHttpClient(@ApplicationContext context: Context): OkHttpClient {

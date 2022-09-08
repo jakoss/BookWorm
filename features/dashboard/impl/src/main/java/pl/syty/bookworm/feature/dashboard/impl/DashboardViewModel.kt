@@ -24,7 +24,7 @@ class DashboardViewModel @VMInject constructor(
         container.stateFlow
             .map { it.searchQuery }
             .distinctUntilChanged()
-            .debounce(300)
+            .debounce(timeoutMillis = 300)
             .collectLatest { query ->
                 runSearch(query)
             }

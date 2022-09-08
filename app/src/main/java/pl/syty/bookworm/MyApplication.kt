@@ -5,6 +5,7 @@ import coil.ImageLoader
 import coil.ImageLoaderFactory
 import coil.disk.DiskCache
 import coil.memory.MemoryCache
+import com.ncapdevi.fragnav.BuildConfig
 import okhttp3.OkHttpClient
 import pl.syty.bookworm.core.networking.NiddlerHandler
 import pl.syty.bookworm.infrastructure.di.AppScope
@@ -54,17 +55,18 @@ open class MyApplication : Application(), ImageLoaderFactory {
         // nothing here, only for override
     }
 
+    @Suppress("MagicNumber")
     override fun newImageLoader() = ImageLoader.Builder(this)
         .okHttpClient(httpClient)
         .diskCache(
             DiskCache.Builder()
                 .directory(File(this.cacheDir, "images_cache"))
-                .maxSizeBytes(1024 * 1024 * 100) // 500 MB of image cache for now
+                .maxSizeBytes(size = 1024 * 1024 * 100) // 500 MB of image cache for now
                 .build()
         )
         .memoryCache(
             MemoryCache.Builder(this)
-                .maxSizeBytes(1024 * 1024 * 20) // 20 MB of memory image cache
+                .maxSizeBytes(size = 1024 * 1024 * 20) // 20 MB of memory image cache
                 .build()
         )
         .crossfade(true)

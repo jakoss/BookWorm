@@ -14,7 +14,7 @@ import javax.lang.model.element.ExecutableElement
  *
  * For original naming strategy for at: https://github.com/mapstruct/mapstruct/blob/master/processor/src/main/java/org/mapstruct/ap/spi/DefaultAccessorNamingStrategy.java
  */
-@Suppress("unused")
+@Suppress("unused", "MagicNumber")
 @AutoService(AccessorNamingStrategy::class)
 class CustomAccessorNamingStrategy : DefaultAccessorNamingStrategy() {
     override fun isSetterMethod(method: ExecutableElement): Boolean {
@@ -31,7 +31,7 @@ class CustomAccessorNamingStrategy : DefaultAccessorNamingStrategy() {
     override fun getPropertyName(getterOrSetterMethod: ExecutableElement): String {
         val methodName = getterOrSetterMethod.simpleName.toString()
         return if (methodName.startsWith("get") || methodName.startsWith("set")) {
-            methodName.substring(3).replaceFirstChar { it.lowercase(Locale.getDefault()) }
+            methodName.substring(startIndex = 3).replaceFirstChar { it.lowercase(Locale.getDefault()) }
         } else {
             // scenario with "is" and "has" - do not change the name here so we can treat those according to the kotlin standards
             methodName

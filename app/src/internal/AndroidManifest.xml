@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <application
-        android:name=".DebugApplication"
+        android:name="pl.jsyty.bookworm.DebugApplication"
         tools:replace="android:name"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,MissingApplicationIcon"
         android:vmSafeMode="true" />
