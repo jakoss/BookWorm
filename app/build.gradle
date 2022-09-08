@@ -7,10 +7,10 @@ plugins {
 }
 
 android {
-    namespace 'pl.syty.bookworm'
+    namespace 'pl.jsyty.bookworm'
 
     defaultConfig {
-        applicationId "pl.syty.bookworm"
+        applicationId "pl.jsyty.bookworm"
         versionCode 1
         versionName "1.0"
 

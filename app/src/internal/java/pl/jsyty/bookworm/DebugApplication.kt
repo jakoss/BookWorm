@@ -7,12 +7,14 @@ import com.pluto.plugins.logger.PlutoTimberTree
 import com.pluto.plugins.network.PlutoInterceptor
 import com.pluto.plugins.network.PlutoNetworkPlugin
 import okhttp3.OkHttpClient
-import pl.syty.bookworm.MyApplication
-import pl.syty.bookworm.core.networking.OkHttpBuilderStep
-import pl.syty.bookworm.core.networking.OkHttpBuilderSteps
+import pl.jsyty.bookworm.core.networking.OkHttpBuilderStep
+import pl.jsyty.bookworm.core.networking.OkHttpBuilderSteps
+import pl.jsyty.bookworm.infrastructure.di.AppScope
+import tangle.inject.TangleScope
 import timber.log.Timber
 
 @Suppress("unused")
+@TangleScope(AppScope::class)
 class DebugApplication : MyApplication() {
     override fun setupPreInjection() {
         OkHttpBuilderSteps.addBuilder(object : OkHttpBuilderStep {

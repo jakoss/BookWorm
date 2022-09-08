@@ -3,8 +3,8 @@ package pl.jsyty.bookworm.booksremote.impl
 import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides
-import pl.syty.bookworm.core.networking.RetrofitFactory
-import pl.syty.bookworm.infrastructure.di.AppScope
+import pl.jsyty.bookworm.core.networking.RetrofitFactory
+import pl.jsyty.bookworm.infrastructure.di.AppScope
 import javax.inject.Singleton
 
 @Suppress("Unused")

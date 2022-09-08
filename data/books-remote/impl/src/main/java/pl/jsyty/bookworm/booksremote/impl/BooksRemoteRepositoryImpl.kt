@@ -4,7 +4,7 @@ import com.squareup.anvil.annotations.ContributesBinding
 import pl.jsyty.bookworm.booksremote.BooksRemoteRepository
 import pl.jsyty.bookworm.booksremote.Volume
 import pl.jsyty.bookworm.booksremote.impl.dtos.VolumeDto
-import pl.syty.bookworm.infrastructure.di.AppScope
+import pl.jsyty.bookworm.infrastructure.di.AppScope
 import javax.inject.Inject
 
 @ContributesBinding(scope = AppScope::class)
